@@ -5,6 +5,15 @@
     <title>Homepage</title>
 </head>
 <body>
+{% if request.user.is_authenticated %}
+<h4> Welcome, {% if request.user.first_name %}
+    {{request.user.first_name}}
+    {% else %}
+    {{request.user.username}}
+    {% endif %}! <a href="{% url 'auth_logout'%}">Log Out</a>
+</h4>
+{% else %}
+{% endif %}
 <p>
 Welcome to the Board app where you can immortalize your memories !
 <br> There are {{total}} files including {{total_img}} images and {{total_vid}} videos in your board!

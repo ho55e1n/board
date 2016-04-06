@@ -119,3 +119,13 @@ STATIC_URL = '/static/'
 # Registration
 ACCOUNT_ACTIVATION_DAYS = 7
 REGISTRATION_AUTO_LOGIN = True
+LOGIN_REDIRECT_URL = '/homepage/'
+
+#Email Settings
+EMAIL_BACKEND ="django.core.mail.backends.smtp.EmailBackend"
+EMAIL_HOST = "smtp.gmail.com"
+EMAIL_HOST_USER = "hades.board@gmail.com"
+EMAIL_HOST_PASSWORD = "Malfered71"
+EMAIL_PORT = 587
+EMAIL_USE_TLS = True
+DEFAULT_FROM_EMAIL = "board@boardteam.com"
