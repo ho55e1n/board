@@ -19,6 +19,7 @@ from django.contrib import admin
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^accounts/', include('registration.backends.default.urls')),
-    url(r'^', include('myapp.urls'), name='index'),
+    url(r'', include('social.apps.django_app.urls', namespace='social')),
+    url(r'', include('myapp.urls'), name='index'),
     url(r'^homepage/', include('myapp.urls'), name='homepage'),
 ]
