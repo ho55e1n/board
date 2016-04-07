@@ -15,8 +15,8 @@
 {% else %}
 {% endif %}
 <p>
-Welcome to the Board app where you can immortalize your memories !
-<br> There are {{total}} files including {{total_img}} images and {{total_vid}} videos in your board!
+<h4>Welcome to the Board app where you can immortalize your memories! <a href="{% url 'auth_login' %}">Log in ? </a> </h4>
+<br> There are {{total}} files including {{total_img}} images and {{total_vid}} videos in your board! User location: {{ request.session.location}}
 </p>
 </body>
 </html>
