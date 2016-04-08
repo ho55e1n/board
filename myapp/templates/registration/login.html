@@ -1,7 +1,8 @@
 <form method="post" action='.'>
-    {% csrf token %}
+    {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="Log In" />
+    <input type="submit" value="Logs In" />
     <input type="hidden" name="next" value="{{next}}" />
+
 </form>
-<a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
+ <a href="{% url 'social:begin' 'facebook' %}">Login with Facebook</a>
