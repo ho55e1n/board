@@ -1,14 +1,35 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<form method="post" action=".">
+{% extends 'base.html' %}
+
+{% block body %}
+
+  <div class="col-md-4 col-md-offset-4 col-sm-4 col-sm-offset-2 loginbox">
+    <div class="panel panel-info">
+	    <div class="panel-heading">
+		     <div class="panel-title">Create a Board Account</div>
+		</div>
+		<div class="panel-body">
+		  <form method="post" action=".">
     {% csrf_token %}
     {{form.as_p}}
     <input type="submit" value="Register" />
+			  		   <div style="border-top:1px solid:#999; padding-top: 20px; margin-top: 25px; z-index: 0;" class="form-group">
+		     <div class="col-md-offset-3 col-md-6">
+			   <a class="btn btn-block btn-social btn-facebook" href="{% url 'social:begin' 'facebook' %}"><i class="fa fa-facebook"></i>Sign up with Facebook</a>
+			 </div>
+		   </div>
+		   <div style="padding-top: 0px;" class="form-group">
+		     <div class="col-md-offset-3 col-md-6">
+			  <a class="btn btn-block btn-social btn-google" href="{% url 'social:begin' 'google' %}"><i class="fa fa-google"></i>Sign up with Google</a>
+			 </div>
+		   </div>
+		   <div style="padding-top: 0px;" class="form-group">
+		     <div class="col-md-offset-3 col-md-6">
+			  <a class="btn btn-block btn-social btn-twitter" href="{% url 'social:begin' 'twitter' %}"><i class="fa fa-twitter"></i>Sign up with Twitter</a>
+			 </div>
+		   </div>
 </form>
-</body>
-</html>
+		</div>
+	</div>
+  </div>
+
+{% endblock %}

@@ -14,8 +14,8 @@ def homepage(request):
     count_img = Board.objects.filter(media_type='img').count()
     count_vid = Board.objects.filter(media_type='vid').count()
     context = {
-        'total': count, 'total_img': count_img, 'total_vid': count_vid,}
+        'total': count, 'total_img': count_img, 'total_vid': count_vid, 'page': 'Welcome to the board',}
     request.session['location']="unknown"
     if request.user.is_authenticated():
         request.session['location'] = "Earth"
-    return render(request, 'homepage.html', context)
+    return render(request, 'base.html', context)
